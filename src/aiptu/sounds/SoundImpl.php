@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DiamondStrider1\Sounds;
+namespace aiptu\sounds;
 
 use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
@@ -15,7 +15,7 @@ use pocketmine\world\sound\Sound;
  *
  * @see VanillaSounds
  */
-final class SoundImpl implements Sound
+class SoundImpl implements Sound
 {
     private float $volume = 1;
     private float $pitch = 1;

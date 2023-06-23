@@ -3,121 +3,106 @@
 declare(strict_types=1);
 
 /**
- * Converts the sound name (ex: step.stem) to a const name (ex: STEP_STEM).
+ * Converts the sound name (e.g., step.stem) to a constant name (e.g., STEP_STEM).
  */
 function soundNameToConstCase(string $name): string
 {
-    return strtoupper(str_replace(['.', '-'], "_", $name));
+    return strtoupper(str_replace(['.', '-'], '_', $name));
 }
 
 /**
  * Used to convert file paths to corresponding sound names.
  *
- * ```php
+ * @param string $name The file path to be converted.
+ * @return string The converted sound name.
+ * @example
  * $file = "sounds/step/wood6.fsb";
  * $name = slashToPeriods($file);
  * assert($name === "step.wood6");
- * ```
  */
-function slashToPeriods(string $name): string {
-    $name = preg_replace('/.*sounds\//', "", $name);
-    $name = preg_replace('/\..*$/', "", $name);
-    return preg_replace('/\//', ".", $name);
+function slashToPeriods(string $name): string
+{
+    $name = preg_replace('/.*sounds\//', '', $name);
+    $name = preg_replace('/\..*$/', '', $name);
+    return str_replace('/', '.', $name);
 }
 
 /**
- * A generator over all the sound names in bedrock-samples.zip
+ * Retrieves all the sound names from bedrock-samples.zip.
  *
- * @return string[]
+ * @return string[] An array of sound names.
  */
-function soundNames(): array {
-    $zip = new ZipArchive;
-    $zip->open(__DIR__ . "/bedrock-samples.zip");
+function soundNames(): array
+{
+    $zip = new ZipArchive();
+    $zip->open(__DIR__ . '/bedrock-samples.zip');
 
-    // Many files can correspond to the same sound.
-    // Files here won't get ignored for having a number
+    // Files that won't be ignored for having a number
     $exceptions = [
-        "random.pop2" => true,
-        "item.trident.riptide_1" => true,
-        "item.trident.riptide_2" => true,
-        "item.trident.riptide_3" => true,
-        "record.11" => true,
-        "record.13" => true,
+        'random.pop2',
+        'item.trident.riptide_1',
+        'item.trident.riptide_2',
+        'item.trident.riptide_3',
+        'record.11',
+        'record.13',
     ];
 
     $return = [];
-    $files = $zip->count();
-    for ($i = 0; $i < $files; $i++) {
+    for ($i = 0; $i < $zip->numFiles; $i++) {
         $name = $zip->getNameIndex($i);
-        if (preg_match("/sounds\/.*\./", $name)) {
+        if (preg_match('/sounds\/.*\./', $name)) {
             $name = slashToPeriods($name);
-            // Check if this sound has many files
-            if (!isset($exceptions[$name])
-                && preg_match('/\d$/', $name)
-            ) {
+            if (!in_array($name, $exceptions, true) && preg_match('/\d$/', $name)) {
                 if (!preg_match('/1$/', $name)) {
                     continue;
                 }
-                // This strips the "1". Ex: step.stem1 -> step.stem
-                $name = substr($name, 0, strlen($name) - 1);
+                $name = substr($name, 0, -1);
             }
             $return[] = $name;
         }
     }
+    $zip->close();
     return $return;
 }
 
 $sounds = soundNames();
-$soundCount = count($sounds);
 
-$soundIds = fopen(__DIR__ . "/src/DiamondStrider1/Sounds/SoundIds.php", "w");
-fwrite($soundIds, <<<EOT
-<?php
+$soundIdsContent = '<?php
 
 declare(strict_types=1);
 
-namespace DiamondStrider1\Sounds;
+namespace aiptu\sounds;
 
-final class SoundIds
+class SoundIds
 {
+';
+$vanillaSoundsContent = '<?php
 
-EOT);
+declare(strict_types=1);
+
+namespace aiptu\sounds;
+
+class VanillaSounds
+{
+';
+
 foreach ($sounds as $sound) {
     $constSound = soundNameToConstCase($sound);
-    fwrite($soundIds, <<<EOT
-        public const $constSound = "$sound";
-
-    EOT);
-}
-fwrite($soundIds, <<<EOT
-}
-
-EOT);
-fclose($soundIds);
-
-$vanillaSounds = fopen(__DIR__ . "/src/DiamondStrider1/Sounds/VanillaSounds.php", "w");
-fwrite($vanillaSounds, <<<EOT
-<?php
-
-declare(strict_types=1);
-
-namespace DiamondStrider1\Sounds;
-
-final class VanillaSounds
-{
-
-EOT);
-foreach ($sounds as $i => $sound) {
-    $constSound = soundNameToConstCase($sound);
-    fwrite($vanillaSounds, <<<EOT
-        public static function $constSound(): SoundImpl {
-            return new SoundImpl(SoundIds::$constSound);
-        }
-
-    EOT . ($i === $soundCount - 1 ? "" : "\n"));
-}
-fwrite($vanillaSounds, <<<EOT
+    $soundIdsContent .= "    public const $constSound = '$sound';\n";
+    $vanillaSoundsContent .= "
+    /**
+     * Creates a new instance of SoundImpl for the $sound sound.
+     *
+     * @return SoundImpl The created SoundImpl instance.
+     */
+    public static function $constSound(): SoundImpl
+    {
+        return new SoundImpl(SoundIds::$constSound);
+    }\n";
 }
 
-EOT);
-fclose($vanillaSounds);
+$soundIdsContent .= "}\n";
+$vanillaSoundsContent .= "}\n";
+
+file_put_contents(__DIR__ . '/src/aiptu/sounds/SoundIds.php', $soundIdsContent);
+file_put_contents(__DIR__ . '/src/aiptu/sounds/VanillaSounds.php', $vanillaSoundsContent);

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DiamondStrider1\Sounds;
+namespace aiptu\sounds;
 
-final class SoundFactory
+class SoundFactory
 {
     public static function create(string $soundId, float $volume = null, float $pitch = null): SoundImpl {
         $sound = new SoundImpl($soundId);
