@@ -8,7 +8,7 @@
     },
     "scripts": {
         "generate_sounds": [
-            "curl https://github.com/Mojang/bedrock-samples/archive/refs/tags/v1.19.50.2.zip -L > bedrock-samples.zip",
+            "curl https://github.com/Mojang/bedrock-samples/archive/refs/tags/v1.20.0.1.zip -L > bedrock-samples.zip",
             "php tools/generate_sounds.php"
         ]
     }

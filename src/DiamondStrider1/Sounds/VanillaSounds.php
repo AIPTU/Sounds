@@ -66,6 +66,10 @@ final class VanillaSounds
         return new SoundImpl(SoundIds::BLOCK_AMETHYST_PLACE);
     }
 
+    public static function BLOCK_AMETHYST_RESONATE(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_AMETHYST_RESONATE);
+    }
+
     public static function BLOCK_AMETHYST_SHIMMER(): SoundImpl {
         return new SoundImpl(SoundIds::BLOCK_AMETHYST_SHIMMER);
     }
@@ -132,6 +136,14 @@ final class VanillaSounds
 
     public static function BLOCK_BAMBOO_WOOD_FENCE_TOGGLE(): SoundImpl {
         return new SoundImpl(SoundIds::BLOCK_BAMBOO_WOOD_FENCE_TOGGLE);
+    }
+
+    public static function BLOCK_BAMBOO_WOOD_HANGING_SIGN_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_BAMBOO_WOOD_HANGING_SIGN_BREAK);
+    }
+
+    public static function BLOCK_BAMBOO_WOOD_HANGING_SIGN_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_BAMBOO_WOOD_HANGING_SIGN_STEP);
     }
 
     public static function BLOCK_BAMBOO_WOOD_TRAPDOOR_TOGGLE(): SoundImpl {
@@ -250,6 +262,70 @@ final class VanillaSounds
         return new SoundImpl(SoundIds::BLOCK_CAVE_VINES_BREAK);
     }
 
+    public static function BLOCK_CHERRY_LEAVES_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_LEAVES_BREAK);
+    }
+
+    public static function BLOCK_CHERRY_LEAVES_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_LEAVES_STEP);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_BREAK);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_STEP);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_BUTTON_CHERRY_WOOD_CLICK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_BUTTON_CHERRY_WOOD_CLICK);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_DOOR_TOGGLE(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_DOOR_TOGGLE);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_FENCE_GATE_TOGGLE(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_FENCE_GATE_TOGGLE);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_HANGING_SIGN_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_HANGING_SIGN_BREAK);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_HANGING_SIGN_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_HANGING_SIGN_STEP);
+    }
+
+    public static function BLOCK_CHERRY_WOOD_TRAPDOOR_TOGGLE(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHERRY_WOOD_TRAPDOOR_TOGGLE);
+    }
+
+    public static function BLOCK_CHISELED_BOOKSHELF_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHISELED_BOOKSHELF_BREAK);
+    }
+
+    public static function BLOCK_CHISELED_BOOKSHELF_INSERT(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHISELED_BOOKSHELF_INSERT);
+    }
+
+    public static function BLOCK_CHISELED_BOOKSHELF_INSERT_ENCHANTED(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHISELED_BOOKSHELF_INSERT_ENCHANTED);
+    }
+
+    public static function BLOCK_CHISELED_BOOKSHELF_PICKUP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHISELED_BOOKSHELF_PICKUP);
+    }
+
+    public static function BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED);
+    }
+
+    public static function BLOCK_CHISELED_BOOKSHELF_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_CHISELED_BOOKSHELF_STEP);
+    }
+
     public static function BLOCK_CHORUSFLOWER_DEATH(): SoundImpl {
         return new SoundImpl(SoundIds::BLOCK_CHORUSFLOWER_DEATH);
     }
@@ -300,6 +376,18 @@ final class VanillaSounds
 
     public static function BLOCK_COPPER_STEP(): SoundImpl {
         return new SoundImpl(SoundIds::BLOCK_COPPER_STEP);
+    }
+
+    public static function BLOCK_DECORATED_POT_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_DECORATED_POT_BREAK);
+    }
+
+    public static function BLOCK_DECORATED_POT_SHATTER(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_DECORATED_POT_SHATTER);
+    }
+
+    public static function BLOCK_DECORATED_POT_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_DECORATED_POT_STEP);
     }
 
     public static function BLOCK_DEEPSLATE_BREAK(): SoundImpl {
@@ -510,6 +598,14 @@ final class VanillaSounds
         return new SoundImpl(SoundIds::BLOCK_NETHER_WOOD_FENCE_TOGGLE);
     }
 
+    public static function BLOCK_NETHER_WOOD_HANGING_SIGN_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_NETHER_WOOD_HANGING_SIGN_BREAK);
+    }
+
+    public static function BLOCK_NETHER_WOOD_HANGING_SIGN_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_NETHER_WOOD_HANGING_SIGN_STEP);
+    }
+
     public static function BLOCK_NETHER_WOOD_TRAPDOOR_TOGGLE(): SoundImpl {
         return new SoundImpl(SoundIds::BLOCK_NETHER_WOOD_TRAPDOOR_TOGGLE);
     }
@@ -670,6 +766,10 @@ final class VanillaSounds
         return new SoundImpl(SoundIds::BLOCK_SHULKER_BOX_OPEN);
     }
 
+    public static function BLOCK_SIGN_WAXED_INTERACT_FAIL(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_SIGN_WAXED_INTERACT_FAIL);
+    }
+
     public static function BLOCK_SMOKER_SMOKE(): SoundImpl {
         return new SoundImpl(SoundIds::BLOCK_SMOKER_SMOKE);
     }
@@ -684,6 +784,30 @@ final class VanillaSounds
 
     public static function BLOCK_STONECUTTER_CUT(): SoundImpl {
         return new SoundImpl(SoundIds::BLOCK_STONECUTTER_CUT);
+    }
+
+    public static function BLOCK_SUSPICIOUS_GRAVEL_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_SUSPICIOUS_GRAVEL_BREAK);
+    }
+
+    public static function BLOCK_SUSPICIOUS_GRAVEL_PLACE(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_SUSPICIOUS_GRAVEL_PLACE);
+    }
+
+    public static function BLOCK_SUSPICIOUS_GRAVEL_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_SUSPICIOUS_GRAVEL_STEP);
+    }
+
+    public static function BLOCK_SUSPICIOUS_SAND_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_SUSPICIOUS_SAND_BREAK);
+    }
+
+    public static function BLOCK_SUSPICIOUS_SAND_PLACE(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_SUSPICIOUS_SAND_PLACE);
+    }
+
+    public static function BLOCK_SUSPICIOUS_SAND_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::BLOCK_SUSPICIOUS_SAND_STEP);
     }
 
     public static function BLOCK_SWEET_BERRY_BUSH_BERRYBUSH_HURT(): SoundImpl {
@@ -1016,6 +1140,26 @@ final class VanillaSounds
 
     public static function ITEM_BOOK_OPEN_FLIP(): SoundImpl {
         return new SoundImpl(SoundIds::ITEM_BOOK_OPEN_FLIP);
+    }
+
+    public static function ITEM_BRUSH_BRUSHING_GENERIC(): SoundImpl {
+        return new SoundImpl(SoundIds::ITEM_BRUSH_BRUSHING_GENERIC);
+    }
+
+    public static function ITEM_BRUSH_BRUSHING_GRAVEL(): SoundImpl {
+        return new SoundImpl(SoundIds::ITEM_BRUSH_BRUSHING_GRAVEL);
+    }
+
+    public static function ITEM_BRUSH_BRUSHING_GRAVEL_COMPLETE(): SoundImpl {
+        return new SoundImpl(SoundIds::ITEM_BRUSH_BRUSHING_GRAVEL_COMPLETE);
+    }
+
+    public static function ITEM_BRUSH_BRUSHING_SAND(): SoundImpl {
+        return new SoundImpl(SoundIds::ITEM_BRUSH_BRUSHING_SAND);
+    }
+
+    public static function ITEM_BRUSH_BRUSHING_SAND_COMPLETE(): SoundImpl {
+        return new SoundImpl(SoundIds::ITEM_BRUSH_BRUSHING_SAND_COMPLETE);
     }
 
     public static function ITEM_DYE_DYE(): SoundImpl {
@@ -2350,6 +2494,58 @@ final class VanillaSounds
         return new SoundImpl(SoundIds::MOB_SLIME_SMALL);
     }
 
+    public static function MOB_SNIFFER_DEATH(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_DEATH);
+    }
+
+    public static function MOB_SNIFFER_DIGGING_STOP(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_DIGGING_STOP);
+    }
+
+    public static function MOB_SNIFFER_EAT(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_EAT);
+    }
+
+    public static function MOB_SNIFFER_HAPPY(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_HAPPY);
+    }
+
+    public static function MOB_SNIFFER_HURT(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_HURT);
+    }
+
+    public static function MOB_SNIFFER_IDLE(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_IDLE);
+    }
+
+    public static function MOB_SNIFFER_IDLE1(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_IDLE1);
+    }
+
+    public static function MOB_SNIFFER_LONGDIG(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_LONGDIG);
+    }
+
+    public static function MOB_SNIFFER_PLOP(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_PLOP);
+    }
+
+    public static function MOB_SNIFFER_SCENTING(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_SCENTING);
+    }
+
+    public static function MOB_SNIFFER_SEARCHING(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_SEARCHING);
+    }
+
+    public static function MOB_SNIFFER_SNIFFING(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_SNIFFING);
+    }
+
+    public static function MOB_SNIFFER_STEP(): SoundImpl {
+        return new SoundImpl(SoundIds::MOB_SNIFFER_STEP);
+    }
+
     public static function MOB_SNOWGOLEM_DEATH(): SoundImpl {
         return new SoundImpl(SoundIds::MOB_SNOWGOLEM_DEATH);
     }
@@ -3032,6 +3228,14 @@ final class VanillaSounds
 
     public static function RANDOM_WOOD_CLICK(): SoundImpl {
         return new SoundImpl(SoundIds::RANDOM_WOOD_CLICK);
+    }
+
+    public static function SNIFFER_EGG_EGG_BREAK(): SoundImpl {
+        return new SoundImpl(SoundIds::SNIFFER_EGG_EGG_BREAK);
+    }
+
+    public static function SNIFFER_EGG_EGG_CRACK(): SoundImpl {
+        return new SoundImpl(SoundIds::SNIFFER_EGG_EGG_CRACK);
     }
 
     public static function SOUND_DEFINITIONS(): SoundImpl {

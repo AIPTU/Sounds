@@ -32,7 +32,7 @@ function slashToPeriods(string $name): string {
  */
 function soundNames(): array {
     $zip = new ZipArchive;
-    $zip->open(__DIR__ . "/../bedrock-samples.zip");
+    $zip->open(__DIR__ . "/bedrock-samples.zip");
 
     // Many files can correspond to the same sound.
     // Files here won't get ignored for having a number
@@ -70,7 +70,7 @@ function soundNames(): array {
 $sounds = soundNames();
 $soundCount = count($sounds);
 
-$soundIds = fopen(__DIR__ . "/../src/DiamondStrider1/Sounds/SoundIds.php", "w");
+$soundIds = fopen(__DIR__ . "/src/DiamondStrider1/Sounds/SoundIds.php", "w");
 fwrite($soundIds, <<<EOT
 <?php
 
@@ -95,7 +95,7 @@ fwrite($soundIds, <<<EOT
 EOT);
 fclose($soundIds);
 
-$vanillaSounds = fopen(__DIR__ . "/../src/DiamondStrider1/Sounds/VanillaSounds.php", "w");
+$vanillaSounds = fopen(__DIR__ . "/src/DiamondStrider1/Sounds/VanillaSounds.php", "w");
 fwrite($vanillaSounds, <<<EOT
 <?php
 
