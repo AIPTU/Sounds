@@ -1,6 +1,6 @@
 # Sounds
 
-This library adds sound APIs for PocketMine-MP plugins. Sounds from Minecraft version 1.19.0 are supported.
+This library adds sound APIs for PocketMine-MP plugins. Sounds from Minecraft version 1.20.0 are supported.
 
 # Usage
 
