@@ -12,7 +12,7 @@
         "minor",
         "patch"
       ],
-      "automerge": true
+      "automerge": false
     }
   ],
   "automergeStrategy": "squash"
