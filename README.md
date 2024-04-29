@@ -7,7 +7,7 @@ This library adds sound APIs for PocketMine-MP plugins. Sounds from Minecraft ve
 Sounds has an API similar to PocketMine's item and block APIs. You can get an `SoundImpl` (which implements PocketMine's Sound interface) by using the `VanillaSounds::XXX()` methods.
 
 ```php
-use DiamondStrider1\Sounds\VanillaSounds;
+use aiptu\sounds\VanillaSounds;
 
 $sound = VanillaSounds::NOTE_BELL();
 $sound->setVolume(2);
@@ -20,7 +20,7 @@ $world->addSound($position, $sound, $players);
 You can also use `SoundFactory`, if the sound you want is not registered by this library.
 
 ```php
-use DiamondStrider1\Sounds\SoundFactory;
+use aiptu\sounds\SoundFactory;
 
 $sound = SoundFactory::create("my.custom.sound", volume: 1, pitch: 1);
 $world->addSound($position, $sound, $players);
@@ -33,8 +33,8 @@ $world->addSound($position, $anotherSound, $players);
 This library also has constants for the ids of sounds, located in `SoundIds`!
 
 ```php
-use DiamondStrider1\Sounds\SoundIds;
-use DiamondStrider1\Sounds\SoundFactory;
+use aiptu\sounds\SoundIds;
+use aiptu\sounds\SoundFactory;
 
 $pigStep = SoundIds::MOB_PIG_STEP
 $pigStepSound = SoundFactory::create($pigStep);
