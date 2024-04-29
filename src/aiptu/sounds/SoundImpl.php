@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * Copyright (c) 2023-2024 AIPTU
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE.md file that was distributed with this source code.
+ *
+ * @see https://github.com/AIPTU/PlayerWarn
+ */
+
 declare(strict_types=1);
 
 namespace aiptu\sounds;
@@ -15,35 +24,31 @@ use pocketmine\world\sound\Sound;
  *
  * @see VanillaSounds
  */
-class SoundImpl implements Sound
-{
-    private float $volume = 1;
-    private float $pitch = 1;
-    public function __construct(
-        private string $name,
-    ) {}
+class SoundImpl implements Sound {
+	private float $volume = 1;
+	private float $pitch = 1;
 
-    public function getVolume(): float
-    {
-        return $this->volume;
-    }
+	public function __construct(
+		private string $name,
+	) {}
 
-    public function setVolume(float $volume): void
-    {
-        $this->volume = $volume;
-    }
+	public function getVolume() : float {
+		return $this->volume;
+	}
 
-    public function getPitch(): float
-    {
-        return $this->pitch;
-    }
-    public function setPitch(float $pitch): void
-    {
-        $this->pitch = $pitch;
-    }
+	public function setVolume(float $volume) : void {
+		$this->volume = $volume;
+	}
 
-    public function encode(Vector3 $pos): array
-    {
-        return [PlaySoundPacket::create($this->name, $pos->getFloorX(), $pos->getFloorY(), $pos->getFloorZ(), $this->volume, $this->pitch)];
-    }
+	public function getPitch() : float {
+		return $this->pitch;
+	}
+
+	public function setPitch(float $pitch) : void {
+		$this->pitch = $pitch;
+	}
+
+	public function encode(Vector3 $pos) : array {
+		return [PlaySoundPacket::create($this->name, $pos->getFloorX(), $pos->getFloorY(), $pos->getFloorZ(), $this->volume, $this->pitch)];
+	}
 }
